@@ -4,15 +4,15 @@ set -euo pipefail
 
 mise plugin link --force frankenphp .
 mise cache clear
-mise install frankenphp@1.12.1
+mise install frankenphp@1.12.4
 
 # Capture and display the output while also verifying it
-output=$(mise exec "frankenphp@1.12.1" -- "frankenphp" --version)
+output=$(mise exec "frankenphp@1.12.4" -- "frankenphp" --version)
 echo "frankenphp output: ${output}"
 
-if echo "${output}" | grep -q '1.12.1'; then
+if echo "${output}" | grep -q '1.12.4'; then
   echo "✓ Tests passed"
 else
-  echo "✗ Test failed: expected version frankenphp@1.12.1"
+  echo "✗ Test failed: expected version frankenphp@1.12.4"
   exit 1
 fi
